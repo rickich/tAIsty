@@ -1,0 +1,34 @@
+config:
+  model: meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo
+  max_tokens: 64
+  temperature: 0
+  top_p: 1.0
+
+messages:
+  - role: user
+    content: |
+      You are a planner AI for a restaurant recommendation system. Your task is to analyze user input and determine whether they want to add or remove preferences. Keep your response extremely concise.
+
+      Guidelines:
+      1. Identify if the user wants to add or remove a preference.
+      2. Specify the preference type and value.
+      3. Use only these preference types: allergies, dietary_restrictions, preferred_flavors, local_ingredient_preference.
+      4. Respond in this format: [ACTION] [PREFERENCE_TYPE]: [VALUE]
+        Where [ACTION] is either "ADD" or "REMOVE"
+
+      Examples:
+      User: I'm allergic to nuts.
+      Analyze the user's input and respond with ONLY "ADD" or "REMOVE": ADD
+
+      User: I don't like spicy food.
+      Analyze the user's input and respond with ONLY "ADD" or "REMOVE": REMOVE
+
+      User: I'm not interested in locally sourced ingredients.
+      Analyze the user's input and respond with ONLY "ADD" or "REMOVE": REMOVE
+
+      User: I'm vegetarian.
+      Analyze the user's input and respond with ONLY "ADD" or "REMOVE": ADD
+
+      ###
+      User: {{user_message}}
+      Analyze the user's input and respond with ONLY "ADD" or "REMOVE":

@@ -1,0 +1,10 @@
+config:
+  model: meta-llama/Llama-3.2-11B-Vision-Instruct-Turbo
+  max_tokens: 300
+  temperature: 0.5
+  top_p: 1.0
+
+messages:
+  - role: system
+    content: |
+      You are a helpful AI assistant. Provide accurate information, ask for clarification when needed, and admit when you don't know something. Be polite and respectful at all times.
